@@ -11,22 +11,19 @@ void PrintArray(int A[], int Size) {
 	}
 }
 int main() {
-	int Size ;
+	int Size;
 	printf("Enter a size for your array "); scanf("%d", &Size);
 	int A[Size];
 	FillArray(A, Size);
-	int Temp = 0, k;
-	for (int j = 0; j < Size; j++) {
-		if (A[j] != 0 ) {
-		    k=1;
-			while((j-k)>=0 && (A[j-k]==0)){
-				Temp = A[j-k+1];
-				A[j-k+1] = A[j-k];
-				A[j-k] = Temp;
-				k++;
-			}
+	int j = 0;
+	for (int i = 0; i < Size; i++) {
+		if (A[i] != 0) {
+			A[j] = A[i];
+			j++;
 		}
 	}
+	for (int k = j + 1; k < Size; k++)
+		A[k] = 0;
 
 	printf("Zero elements shifted");
 	PrintArray(A, Size);

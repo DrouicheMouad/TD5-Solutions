@@ -40,7 +40,7 @@ int main() {
 	printf("Enter the value you want to insert ");
 	scanf("%d", &Value);
 	int i = Size - 2;
-	while (Value < A[i]) {
+	while (Value < A[i] && i>=0) {
 		A[i + 1] = A[i];
 		i--;
 	}

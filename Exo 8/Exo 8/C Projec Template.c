@@ -47,7 +47,7 @@ int main() {
 		A[Size - 2 - i] = temp;
 		i++;
 	}
-	printf("Value inserted, here's the sorted array\n");
+	printf("Value inserted successfully, here's the sorted array\n");
 	PrintArray(A, Size);
 
 	return 0;

@@ -13,7 +13,7 @@ void PrintArray(int A[], int Size) {
 int main() {
 	int Size;
 	printf("Enter a size for your array "); scanf("%d", &Size);
-	int A[Size];
+	int A[Size] = { 0 };
 	FillArray(A, Size);
 	int j = 0;
 	for (int i = 0; i < Size; i++) {
@@ -22,9 +22,6 @@ int main() {
 			j++;
 		}
 	}
-	for (int k = j + 1; k < Size; k++)
-		A[k] = 0;
-
 	printf("Zero elements shifted");
 	PrintArray(A, Size);
 	return 0;

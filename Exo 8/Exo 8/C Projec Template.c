@@ -33,20 +33,18 @@ void SortArrayAscendingly(int A[], int Size) {
 int main() {
 	int Size = 0;
 	printf("Enter a size for your array "); scanf("%d", &Size);
-	int A[Size], Value;
+	int A[Size]={0}, Value;
 	FillArray(A, Size - 1);
 	SortArrayAscendingly(A, Size - 1);
 	PrintArray(A, Size - 1);
 	printf("Enter the value you want to insert ");
 	scanf("%d", &Value);
-	A[Size - 1] = Value;
-	int i = 0, temp = 0;
-	while (Value < A[Size - 2 - i]) {
-		temp = A[Size - 1 - i];
-		A[Size - 1 - i] = A[Size - 2 - i];
-		A[Size - 2 - i] = temp;
-		i++;
+	int i = Size - 2;
+	while (Value < A[i]) {
+		A[i + 1] = A[i];
+		i--;
 	}
+	A[i + 1] = Value;
 	printf("Value inserted successfully, here's the sorted array\n");
 	PrintArray(A, Size);
 
